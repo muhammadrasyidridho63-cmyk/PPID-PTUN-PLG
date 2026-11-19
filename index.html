@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="#1B4332" name="theme-color"/>
+  <title>Portal PPID PTUN Palembang — Mahkamah Agung RI</title>
+  
+  <link rel="manifest" href="manifest.json"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#012d1d',
+            'primary-container': '#1b4332',
+            'primary-fixed-dim': '#a5d0b9',
+            'primary-fixed': '#c1ecd4',
+            secondary: '#795900',
+            'secondary-container': '#d4a017',
+            'secondary-fixed': '#ffdfa0',
+            'secondary-fixed-dim': '#f6be39',
+            surface: '#f8f9ff',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#eef4ff',
+            'surface-container': '#e5eeff',
+            'surface-container-high': '#dfe9fa',
+            'on-surface': '#121c28',
+            'on-surface-variant': '#414844',
+            outline: '#717973',
+            'outline-variant': '#c1c8c2'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="bg-surface font-sans text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- =========================================================================
+       TOP STICKY NAVBAR (JUDICIAL AUTHORITY BAR)
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-primary-container shadow-[0_2px_12px_rgba(0,0,0,0.18)]">
+    <div class="h-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4">
+      <!-- Brand Logo & Insignia -->
+      <a href="#beranda" class="flex items-center gap-3 shrink-0">
+        <div class="relative flex items-center justify-center">
+          <img alt="Logo PTUN Palembang" class="w-9 h-9 rounded-full object-cover ring-2 ring-secondary-container/40" src="https://lh3.googleusercontent.com/aida/ALJJyrCjs8291qrVxG3pTAzx3d1M83dr54v_P-qdB3UIT1iF3DuzOwv38YJW856oGAquxRzcmICx7f6HNVQs2hHKYATBun2o0CexoO7RJhIu1Z1GqfbGSx3-Bsc_aUBuhLzodYxrhaprrlnmDZyo1wpPtjlz-m79qAYvFsKY9yM-xbcmxj8ztcKmfabH45EVwgS7AXoE-HuFxqGckeDPS_rj8vT5zsxqW3Lm7HoKCi1gGxJp"/>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display text-sm sm:text-base font-bold tracking-wide text-white leading-tight uppercase">PPID PTUN PALEMBANG</span>
+          <span class="text-[11px] text-primary-fixed-dim leading-none hidden sm:block">Pengadilan Tata Usaha Negara Palembang • Mahkamah Agung RI</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden xl:flex items-center gap-1">
+        <a class="px-3 py-1.5 transition-colors bg-primary text-secondary-container font-semibold rounded-lg shadow-sm text-sm" data-path="beranda" href="#beranda">Beranda</a>
+        <a class="px-3 py-1.5 rounded-lg text-primary-fixed-dim hover:text-white hover:bg-primary/50 text-sm font-medium transition-colors" data-path="direktori" href="#direktori">Direktori Informasi</a>
+        <a class="px-3 py-1.5 rounded-lg text-primary-fixed-dim hover:text-white hover:bg-primary/50 text-sm font-medium transition-colors" data-path="standar-layanan" href="#standar-layanan">Standar Layanan</a>
+        <a class="px-3 py-1.5 rounded-lg text-primary-fixed-dim hover:text-white hover:bg-primary/50 text-sm font-medium transition-colors" data-path="lacak" href="#lacak">Lacak Permohonan</a>
+        <a class="px-3 py-1.5 rounded-lg text-primary-fixed-dim hover:text-white hover:bg-primary/50 text-sm font-medium transition-colors" data-path="profil" href="#profil">Profil PPID</a>
+        <a class="px-3 py-1.5 rounded-lg text-primary-fixed-dim hover:text-white hover:bg-primary/50 text-sm font-medium transition-colors" data-path="admin" href="#admin">Panel Admin</a>
+      </nav>
+
+      <!-- Accessibility & CTA Button -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Accessibility Font & Contrast Controls -->
+        <div class="hidden sm:flex items-center bg-primary rounded-full px-2.5 py-1 text-primary-fixed-dim gap-1.5 text-xs">
+          <button onclick="setFontScale('sm')" class="hover:text-white px-1 font-medium transition-colors" title="Huruf Kecil" type="button">A-</button>
+          <span class="text-outline">|</span>
+          <button onclick="setFontScale('md')" class="text-white px-1 font-bold transition-colors" title="Huruf Standar" type="button">A</button>
+          <span class="text-outline">|</span>
+          <button onclick="setFontScale('lg')" class="hover:text-white px-1 font-medium transition-colors" title="Huruf Besar" type="button">A+</button>
+          <div class="w-px h-3.5 bg-outline/40 mx-0.5"></div>
+          <button onclick="toggleHighContrast()" class="hover:text-white p-0.5 transition-colors flex items-center" title="Mode Kontras Tinggi" type="button">
+            <span class="material-symbols-outlined text-[17px]">contrast</span>
+          </button>
+        </div>
+
+        <a class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-secondary-container hover:bg-amber-400 text-primary font-bold text-xs sm:text-sm shadow-md transition-all shrink-0" href="#permohonan">
+          Ajukan Permohonan
+        </a>
+      </div>
+    </div>
+    <!-- Golden Accent Border Strip -->
+    <div class="h-0.5 w-full bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-85"></div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN SPA ROUTING CONTAINER
+       ========================================================================= -->
+  <main class="w-full pt-16 flex-1 min-h-[calc(100vh-64px)]">
+
+    <!-- =======================================================================
+         VIEW 1: BERANDA PUBLIK (#beranda)
+         ======================================================================= -->
+    <div id="view-beranda" class="flex flex-col w-full">
+      <!-- Urgent Announcement Banner -->
+      <div class="w-full bg-[#fef9c3] text-[#854d0e] px-4 py-3 shadow-sm relative z-20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fef08a] text-[#715300] shrink-0 shadow-inner">
+              <span class="material-symbols-outlined text-[19px]">campaign</span>
+            </span>
+            <div class="text-left">
+              <span class="inline-block uppercase tracking-wider text-[11px] font-bold px-2 py-0.5 rounded bg-[#fef08a] text-[#715300] mr-2">Informasi Serta Merta</span>
+              <span id="announcement-banner-text" class="text-xs sm:text-sm font-medium text-[#715300]">
+                Jadwal Sidang Terbuka & Penyesuaian Jam Layanan Informasi Khusus Sidang Pleno Elektronik PTUN Palembang.
+              </span>
+            </div>
+          </div>
+          <a class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white text-secondary text-xs font-bold shadow-sm hover:bg-amber-100 transition-colors shrink-0" href="#standar-layanan">
+            <span>Rincian Maklumat</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Section with Court Graphics -->
+      <section class="relative bg-gradient-to-b from-primary via-primary-container to-primary text-white pt-10 pb-28 px-4 sm:px-6 lg:px-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+          <!-- Badges -->
+          <div class="flex flex-wrap items-center gap-2 mb-6">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm text-secondary-container text-xs font-semibold uppercase tracking-wider">
+              <span class="material-symbols-outlined text-[16px]">account_balance</span>
+              <span>Mahkamah Agung RI</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-primary-fixed text-xs">
+              <span class="material-symbols-outlined text-[15px]">gavel</span>
+              <span>UU KIP NO. 14/2008 & SK KMA 2-144/2022</span>
+            </div>
+            <span class="text-xs font-medium text-primary-fixed-dim bg-white/5 px-2.5 py-0.5 rounded-full">
+              Wilayah Bebas dari Korupsi (WBK)
+            </span>
+          </div>
+
+          <!-- Headline -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
+            <div class="lg:col-span-8">
+              <h1 class="font-display text-3xl sm:text-5xl font-bold tracking-tight mb-4 leading-tight">
+                Keterbukaan Informasi Publik <br/>
+                <span class="text-secondary-container">Pengadilan Tata Usaha Negara Palembang</span>
+              </h1>
+              <p class="text-base sm:text-lg text-primary-fixed-dim max-w-2xl leading-relaxed">
+                Akses resmi yang cepat, transparan, dan akuntabel terhadap register perkara, regulasi peradilan, dan layanan publik berintegritas tinggi untuk seluruh warga negara.
+              </p>
+            </div>
+            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end items-start lg:items-end">
+              <div class="bg-primary/80 backdrop-blur-md rounded-xl p-3.5 flex items-center gap-3 w-full max-w-xs shadow-md border border-white/10">
+                <div class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary-container shrink-0">
+                  <span class="material-symbols-outlined text-[24px]">verified_user</span>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-white">PPID Terakreditasi</div>
+                  <div class="text-[13px] text-primary-fixed-dim">Kualifikasi Informatif 2025</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-primary-fixed text-xs">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim animate-ping"></span>
+                <span>Meja Layanan PTSP PPID Sedang Beroperasi</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dual Quick Action Card -->
+          <div class="w-full bg-white rounded-2xl shadow-xl p-5 sm:p-7 text-on-surface">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <!-- Left: Document Catalog Search -->
+              <div class="lg:col-span-7 flex flex-col gap-3">
+                <label class="text-sm font-bold text-primary flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">search</span>
+                  <span>Pencarian Cepat Daftar Informasi Publik (DIP)</span>
+                </label>
+                <div class="relative flex items-center">
+                  <span class="material-symbols-outlined absolute left-4 text-gray-400 text-[22px]">manage_search</span>
+                  <input id="quick-doc-input" class="w-full h-12 pl-12 pr-24 rounded-lg bg-gray-50 border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all" placeholder="Ketik kata kunci: Putusan, DIPA, SOP, Profil Hakim, Renstra..." type="text"/>
+                  <button onclick="Router.navigate('direktori')" class="absolute right-2 px-4 py-2 bg-primary hover:bg-emerald-950 text-white rounded-lg text-xs font-semibold flex items-center gap-1 transition-colors" type="button">
+                    <span>Cari</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </button>
+                </div>
+                <div class="flex items-center gap-2 overflow-x-auto pt-1">
+                  <span class="text-xs text-gray-500 font-semibold shrink-0">Filter Cepat:</span>
+                  <button onclick="Router.navigate('direktori')" class="px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-primary text-xs font-medium whitespace-nowrap">Informasi Berkala</button>
+                  <button onclick="Router.navigate('direktori')" class="px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-primary text-xs font-medium whitespace-nowrap">Serta Merta</button>
+                  <button onclick="Router.navigate('direktori')" class="px-2.5 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-primary text-xs font-medium whitespace-nowrap">Setiap Saat</button>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="hidden lg:block lg:col-span-1 h-24 mx-auto w-px bg-gray-200"></div>
+
+              <!-- Right: Instant Tracking Bar -->
+              <div class="lg:col-span-4 flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-sm font-bold text-primary flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+                    <span>Lacak Status Permohonan</span>
+                  </label>
+                  <span class="text-secondary text-[11px] font-bold bg-[#fef9c3] px-2 py-0.5 rounded">Resmi</span>
+                </div>
+                <div class="relative flex items-center">
+                  <input id="quick-track-input" class="w-full h-12 pl-4 pr-24 rounded-lg bg-gray-50 border border-gray-200 font-mono text-xs sm:text-sm font-bold text-gray-800 placeholder:font-sans placeholder:font-normal focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white" placeholder="REG-PPID-2026-089" type="text"/>
+                  <button onclick="Router.navigate('lacak', { reg: document.getElementById('quick-track-input').value })" class="absolute right-2 px-3.5 py-2 bg-secondary-container hover:bg-amber-400 text-primary rounded-lg text-xs font-bold transition-colors" type="button">
+                    Lacak
+                  </button>
+                </div>
+                <p class="text-[12px] text-gray-500">Pantau tahapan verifikasi, telaah berkas, dan penerbitan salinan secara langsung.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real-Time Statistics Cards (Live Public Metrics) -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 -mt-14 relative z-20 w-full">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white rounded-xl shadow-md p-4 sm:p-5 border border-gray-100 flex flex-col justify-between">
+            <span class="text-xs font-medium text-gray-500">TOTAL PERMOHONAN</span>
+            <div id="stat-total-permohonan" class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">248</div>
+            <span class="text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full w-max mt-2">Tahun Berjalan 2026</span>
+          </div>
+          <div class="bg-white rounded-xl shadow-md p-4 sm:p-5 border border-gray-100 flex flex-col justify-between">
+            <span class="text-xs font-medium text-gray-500">TEPAT WAKTU (SLA)</span>
+            <div id="stat-tepat-waktu" class="font-display text-2xl sm:text-3xl font-bold text-emerald-700 mt-1">98.4%</div>
+            <span class="text-[11px] text-gray-500 mt-2">Standar SK KMA 2-144</span>
+          </div>
+          <div class="bg-white rounded-xl shadow-md p-4 sm:p-5 border border-gray-100 flex flex-col justify-between">
+            <span class="text-xs font-medium text-gray-500">RATA-RATA RESPONS</span>
+            <div id="stat-rata-hari" class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">4.2 Hari</div>
+            <span class="text-[11px] text-gray-500 mt-2">Batas Maksimal 10 Hari</span>
+          </div>
+          <div class="bg-white rounded-xl shadow-md p-4 sm:p-5 border border-gray-100 flex flex-col justify-between">
+            <span class="text-xs font-medium text-gray-500">INDEKS KEPUASAN (IKM)</span>
+            <div id="stat-skor-ikm" class="font-display text-2xl sm:text-3xl font-bold text-amber-700 mt-1">4.85 / 5.0</div>
+            <span class="text-[11px] text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full w-max mt-2">Sangat Baik</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 Core Service Cards -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 w-full">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold text-secondary uppercase tracking-widest">Layanan Pokok PPID</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">Akses Layanan Hak Atas Informasi Publik</h2>
+          <p class="text-sm text-gray-600 mt-2">Dilaksanakan secara terpadu melalui Meja PTSP & Portal Daring sesuai UU No. 14 Tahun 2008.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1: Permohonan Online -->
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 text-primary flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-[28px]">post_add</span>
+              </div>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">SLA 10 Hari Kerja</span>
+              <h3 class="font-display text-lg font-bold text-gray-900 mt-2">Permohonan Informasi Online</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Permohonan resmi register informasi tata usaha negara, administrasi peradilan, data perkara inkracht, dan salinan penetapan putusan.
+              </p>
+              <ul class="text-xs text-gray-500 space-y-1.5 mt-4 pt-4 border-t border-gray-100">
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-700 text-[16px]">check</span> Cukup KTP Pemohon / Akta Badan Hukum</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-700 text-[16px]">check</span> Tanda terima digital ber-QR Code HMAC</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-700 text-[16px]">check</span> Notifikasi WA & Email otomatis</li>
+              </ul>
+            </div>
+            <a href="#permohonan" class="mt-6 w-full py-2.5 px-4 bg-primary hover:bg-emerald-950 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+              <span>Mulai Ajukan Permohonan</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- Card 2: Pengajuan Keberatan -->
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-[28px]">balance</span>
+              </div>
+              <span class="text-[11px] font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full">Atasan PPID (Ketua PTUN)</span>
+              <h3 class="font-display text-lg font-bold text-gray-900 mt-2">Pengajuan Keberatan Online</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Mekanisme administratif apabila permohonan informasi ditolak, tidak ditanggapi dalam 10+7 hari, atau dikenakan biaya yang tidak wajar.
+              </p>
+              <ul class="text-xs text-gray-500 space-y-1.5 mt-4 pt-4 border-t border-gray-100">
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-700 text-[16px]">check</span> 7 Alasan sah keberatan sesuai UU KIP</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-700 text-[16px]">check</span> Ditinjau langsung oleh Wakil Ketua PTUN</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-700 text-[16px]">check</span> Terhubung dengan nomor registrasi permohonan</li>
+              </ul>
+            </div>
+            <a href="#keberatan" class="mt-6 w-full py-2.5 px-4 bg-amber-500 hover:bg-amber-600 text-primary rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+              <span>Ajukan Keberatan Resmi</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- Card 3: Direktori Informasi (DIP) -->
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-6 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-[28px]">folder_open</span>
+              </div>
+              <span class="text-[11px] font-bold text-blue-800 bg-blue-100 px-2.5 py-0.5 rounded-full">1.280+ Arsip Terbuka</span>
+              <h3 class="font-display text-lg font-bold text-gray-900 mt-2">Direktori Informasi Publik (DIP)</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Perpustakaan digital resmi memuat laporan kinerja tahunan (LkjIP), realisasi anggaran (DIPA 01 & 03), profil pimpinan, dan SOP peradilan.
+              </p>
+              <ul class="text-xs text-gray-500 space-y-1.5 mt-4 pt-4 border-t border-gray-100">
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-[16px]">check</span> Kategori Berkala, Serta Merta & Setiap Saat</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-[16px]">check</span> Bebas unduh format PDF, XLS & Video</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-blue-700 text-[16px]">check</span> Pencarian teks instan tanpa reload</li>
+              </ul>
+            </div>
+            <a href="#direktori" class="mt-6 w-full py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+              <span>Buka Katalog Dokumen</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Judicial Transparency Showcase Section -->
+      <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-12 w-full border-y border-gray-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5">
+            <span class="text-xs font-bold text-secondary uppercase tracking-wider">Pelayanan Ramah & Berintegritas</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">Transparansi Peradilan yang Humanis dan Aksesibel</h2>
+            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+              Meja PPID PTUN Palembang dirancang ramah untuk seluruh kalangan masyarakat, termasuk penyandang disabilitas, akademisi, jurnalis, dan pihak pencari keadilan dengan panduan petugas informasi bersertifikasi.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mt-6">
+              <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                <span class="material-symbols-outlined text-primary text-[24px]">accessible</span>
+                <h4 class="font-bold text-xs text-gray-900 mt-2">Jalur Ramah Difabel</h4>
+                <p class="text-[11px] text-gray-500 mt-1">Guiding block, format braille, dan kursi roda khusus pemohon.</p>
+              </div>
+              <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                <span class="material-symbols-outlined text-primary text-[24px]">savings</span>
+                <h4 class="font-bold text-xs text-gray-900 mt-2">Biaya Rp 0 (Gratis)</h4>
+                <p class="text-[11px] text-gray-500 mt-1">Akses digital tanpa biaya retribusi apapun.</p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+            <div class="rounded-2xl overflow-hidden shadow-md">
+              <img alt="Loket PTSP PPID" class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80"/>
+              <div class="p-3 bg-white text-xs font-semibold text-gray-800">Meja Layanan Terpadu PTSP PPID</div>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-md">
+              <img alt="Ruang Sidang Elektronik" class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80"/>
+              <div class="p-3 bg-white text-xs font-semibold text-gray-800">Ruang Sidang & Media Center Terbuka</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 2: FORMULIR PERMOHONAN ONLINE (#permohonan)
+         ======================================================================= -->
+    <div id="view-permohonan" class="hidden max-w-4xl mx-auto px-4 sm:px-6 py-8 w-full">
+      <div class="mb-6">
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Layanan Mandiri Warga</span>
+        <h1 class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">Formulir Permohonan Informasi Publik Elektronik</h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-1">Berdasarkan SK KMA Nomor 2-144/KMA/SK/VIII/2022 tentang Standar Pelayanan Informasi Publik.</p>
+      </div>
+
+      <!-- SLA Reassurance Banner -->
+      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center justify-between mb-8 gap-3">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-emerald-800 text-[24px]">schedule</span>
+          <div>
+            <span class="text-xs font-bold text-emerald-950 block">Jaminan Waktu Pelayanan Hukum</span>
+            <span class="text-xs text-emerald-800">Verifikasi berkas 1–3 hari kerja. Batas penyelesaian permohonan maksimal 10 hari kerja.</span>
+          </div>
+        </div>
+        <span class="text-[11px] font-bold text-emerald-900 bg-white px-2.5 py-1 rounded-full shadow-sm shrink-0">PTSP Aktif</span>
+      </div>
+
+      <form id="form-permohonan-el" onsubmit="submitPermohonanOnline(event)" class="space-y-6">
+        <!-- Section 1: Identitas Pemohon -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h3 class="font-display text-base font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+            <span>Bagian 1: Identitas Pemohon Informasi</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <label class="text-xs font-semibold text-gray-700">Nomor Induk Kependudukan (NIK) *</label>
+                <span id="nik-validation-badge" class="text-[11px] text-gray-400">16 digit</span>
+              </div>
+              <input id="form-nik" oninput="validateNIK()" maxlength="16" placeholder="Contoh: 1671041508890001" required type="text" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm font-mono focus:ring-2 focus:ring-primary focus:outline-none"/>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Nomor WhatsApp / HP Aktif *</label>
+              <input id="form-wa" placeholder="0812-xxxx-xxxx" required type="tel" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"/>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Nama Lengkap Sesuai KTP *</label>
+              <input id="form-nama" placeholder="Nama lengkap Anda" required type="text" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"/>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Alamat Email *</label>
+              <input id="form-email" placeholder="nama@email.com" required type="email" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"/>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Pekerjaan / Profesi</label>
+              <input id="form-pekerjaan" placeholder="Advokat / Peneliti / Mahasiswa / Swasta" type="text" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"/>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Bertindak Untuk dan Atas Nama</label>
+              <div class="flex items-center gap-4 h-10">
+                <label class="flex items-center gap-1.5 text-xs text-gray-700 cursor-pointer">
+                  <input type="radio" name="atas-nama" value="Diri Sendiri" checked class="text-primary"/> Diri Sendiri
+                </label>
+                <label class="flex items-center gap-1.5 text-xs text-gray-700 cursor-pointer">
+                  <input type="radio" name="atas-nama" value="Klien / Kuasa Hukum" class="text-primary"/> Klien / Kuasa
+                </label>
+                <label class="flex items-center gap-1.5 text-xs text-gray-700 cursor-pointer">
+                  <input type="radio" name="atas-nama" value="Badan Hukum" class="text-primary"/> Badan Hukum
+                </label>
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Alamat Lengkap Sesuai KTP *</label>
+              <textarea id="form-alamat" rows="2" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota/Kabupaten" required class="w-full p-2.5 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Spesifikasi Rincian Informasi -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h3 class="font-display text-base font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">description</span>
+            <span>Bagian 2: Spesifikasi Rincian Informasi yang Dibutuhkan</span>
+          </h3>
+          <div class="space-y-4">
+            <div>
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Rincian Informasi / Berkas yang Diminta *</label>
+              <textarea id="form-rincian" rows="3" placeholder="Contoh: Salinan Berita Acara Pelaksanaan Eksekusi Putusan No. 42/G/2025/PTUN.PLG tanggal 14 Januari 2026." required class="w-full p-2.5 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"></textarea>
+              <span class="text-[11px] text-gray-500">Sebutkan nomor perkara, tahun, jenis dokumen, atau identitas berkas secara jelas.</span>
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-700 block mb-1">Tujuan Penggunaan Informasi *</label>
+              <input id="form-tujuan" placeholder="Contoh: Kepentingan Penegakan Hukum & Pembelaan Hak Warga / Riset Skripsi" required type="text" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"/>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs font-semibold text-gray-700 block mb-1">Bentuk Salinan</label>
+                <div class="space-y-1.5">
+                  <label class="flex items-center gap-2 text-xs text-gray-700">
+                    <input type="radio" name="bentuk-salinan" value="Salinan Elektronik (PDF)" checked class="text-primary"/> Salinan Elektronik (PDF / Email)
+                  </label>
+                  <label class="flex items-center gap-2 text-xs text-gray-700">
+                    <input type="radio" name="bentuk-salinan" value="Salinan Cetak Fisik" class="text-primary"/> Salinan Cetak Fisik (Biaya fotokopi riil)
+                  </label>
+                </div>
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-gray-700 block mb-1">Cara Penyerahan</label>
+                <div class="space-y-1.5">
+                  <label class="flex items-center gap-2 text-xs text-gray-700">
+                    <input type="radio" name="cara-penyerahan" value="Unduh di Portal / Email" checked class="text-primary"/> Unduh melalui Portal / Email
+                  </label>
+                  <label class="flex items-center gap-2 text-xs text-gray-700">
+                    <input type="radio" name="cara-penyerahan" value="Ambil Mandiri di PTSP PTUN" class="text-primary"/> Ambil Mandiri di Loket PTSP
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Unggah Identitas KTP -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <h3 class="font-display text-base font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">fingerprint</span>
+            <span>Bagian 3: Unggah Dokumen Identitas (KTP / SIM / Paspor)</span>
+          </h3>
+
+          <div id="ktp-dropzone" onclick="document.getElementById('file-ktp-input').click()" class="border-2 border-dashed border-gray-300 hover:border-primary rounded-xl p-6 text-center cursor-pointer transition-colors bg-gray-50/50">
+            <input type="file" id="file-ktp-input" accept="image/jpeg,image/png,application/pdf" onchange="handleKTPFileSelect(this.files[0])" class="hidden"/>
+            <span class="material-symbols-outlined text-gray-400 text-[36px]">cloud_upload</span>
+            <p class="text-xs font-semibold text-gray-700 mt-2">Klik atau Seret Berkas KTP ke Area Ini</p>
+            <p class="text-[11px] text-gray-500 mt-1">Format: JPG, PNG, PDF (Maksimal 5 MB)</p>
+          </div>
+
+          <!-- Preview Berkas Terpilih -->
+          <div id="ktp-preview-container" class="hidden flex items-center justify-between p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl mt-3">
+            <div class="flex items-center gap-3">
+              <img id="ktp-preview-img" class="w-12 h-9 object-cover rounded shadow-sm border border-emerald-300 hidden"/>
+              <div>
+                <span id="ktp-file-name" class="text-xs font-bold text-emerald-950 block">ktp_pemohon.jpg</span>
+                <span id="ktp-file-size" class="text-[11px] text-emerald-700">1.4 MB</span>
+              </div>
+            </div>
+            <button onclick="removeKTPPreview()" type="button" class="text-red-700 hover:text-red-900 text-xs font-semibold">
+              Hapus
+            </button>
+          </div>
+          <p class="text-[11px] text-gray-500 mt-2">
+            🔒 Berkas identitas Anda disimpan di repositori privat terenkripsi Mahkamah Agung RI dan hanya dapat dibuka oleh petugas verifikator yang sah.
+          </p>
+        </div>
+
+        <!-- Pernyataan & Tombol Aksi -->
+        <div class="p-4 bg-gray-50 rounded-xl border border-gray-200 space-y-3">
+          <label class="flex items-start gap-2.5 text-xs text-gray-700 cursor-pointer">
+            <input id="form-pernyataan" type="checkbox" required class="mt-0.5 text-primary rounded"/>
+            <span>Saya menyatakan bahwa seluruh data dan dokumen identitas yang disampaikan adalah benar dan sah. Informasi publik yang saya peroleh semata-mata akan dipergunakan sesuai tujuan permohonan dan tidak akan disalahgunakan untuk perbuatan melawan hukum (UU No. 14 Tahun 2008).</span>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 pt-2">
+          <button onclick="saveFormDraft()" type="button" class="px-4 py-2.5 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-100 text-xs font-semibold transition-colors">
+            Simpan sebagai Draf
+          </button>
+          <button id="btn-submit-permohonan" type="submit" class="px-6 py-2.5 rounded-xl bg-primary hover:bg-emerald-950 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
+            <span>Kirim Permohonan Sekarang</span>
+            <span class="material-symbols-outlined text-[18px]">send</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 3: LACAK STATUS PERMOHONAN (#lacak)
+         ======================================================================= -->
+    <div id="view-lacak" class="hidden max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full">
+      <!-- Search Box Card -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Layanan Mandiri Pemohon</span>
+        <h2 class="font-display text-xl sm:text-2xl font-bold text-primary mt-1">Lacak Status & Progres Permohonan</h2>
+        <p class="text-xs text-gray-500 mt-1 mb-5">Masukkan Nomor Registrasi resmi dan 4 digit akhir NIK pemohon untuk membuka catatan audit real-time.</p>
+
+        <form id="tracking-search-form" onsubmit="submitLacakForm(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
+          <div class="sm:col-span-7">
+            <label class="text-xs font-semibold text-gray-700 block mb-1">Nomor Registrasi PPID</label>
+            <input id="reg-number" placeholder="Contoh: REG-PPID-2026-089" required class="w-full h-11 px-3.5 rounded-lg border border-gray-300 font-mono text-sm font-bold uppercase text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none"/>
+          </div>
+          <div class="sm:col-span-3">
+            <label class="text-xs font-semibold text-gray-700 block mb-1">4 Digit Akhir NIK</label>
+            <input id="nik-digit" maxlength="4" placeholder="••••" required type="password" class="w-full h-11 px-3.5 rounded-lg border border-gray-300 font-mono text-sm font-bold tracking-widest text-center text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none"/>
+          </div>
+          <div class="sm:col-span-2">
+            <button id="search-btn" type="submit" class="w-full h-11 bg-primary hover:bg-emerald-950 text-white rounded-lg font-bold text-xs flex items-center justify-center gap-1 shadow-sm transition-colors">
+              <span class="material-symbols-outlined text-[18px]">search</span>
+              <span>Lacak</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Result Container (Hidden until search succeeds) -->
+      <div id="lacak-result-container" class="hidden space-y-6">
+        <!-- Floating Header Summary -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 relative overflow-hidden">
+          <div class="h-1 bg-gradient-to-r from-primary via-emerald-700 to-amber-500 absolute top-0 left-0 right-0"></div>
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span id="track-reg-badge" class="font-mono font-bold text-sm bg-primary text-white px-3 py-1 rounded-full">REG-PPID-2026-089</span>
+                <span id="track-reg-date" class="text-xs text-gray-500">12 Februari 2026</span>
+              </div>
+              <h3 id="track-object-title" class="font-display text-lg font-bold text-gray-900 mt-2">Salinan Putusan & Berita Acara Eksekusi</h3>
+              <p class="text-xs text-gray-500 mt-1">
+                Pemohon: <span id="track-applicant-name" class="font-semibold text-gray-700">Ahmad R****</span> | 
+                <span id="track-nik-masked">NIK: 167104******0001</span> | 
+                Unit: <span id="track-unit-pic" class="text-primary font-medium">Kepaniteraan Hukum</span>
+              </p>
+            </div>
+            <div id="track-status-pill" class="px-4 py-2 rounded-full bg-blue-50 text-blue-800 text-xs font-bold border border-blue-200 shrink-0">
+              Tahap 3: Koordinasi Unit
+            </div>
+          </div>
+
+          <!-- SLA Progress Meter -->
+          <div class="mt-6 pt-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div id="track-sla-text" class="text-xs">
+              <span class="text-green-700 font-bold">Sisa Waktu Layanan: 4 Hari Kerja Tersisa</span>
+            </div>
+            <span class="text-[11px] text-gray-400">Maksimal 10 Hari Kerja sesuai UU KIP</span>
+          </div>
+        </div>
+
+        <!-- 5-Stage Stepper Timeline & Right Action Column -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+            <h4 class="font-display text-base font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">Alur Tahapan Penanganan Berkas</h4>
+            <div id="track-timeline-container" class="space-y-3">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Electronic Receipt & Action Card -->
+          <div class="lg:col-span-4 space-y-6">
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 text-center">
+              <span class="text-xs font-bold text-gray-500 block">TANDA TERIMA ELEKTRONIK</span>
+              <p class="text-[11px] text-gray-400 mt-0.5">Keaslian Dokumen Terverifikasi HMAC</p>
+              <div class="my-4 flex justify-center">
+                <img id="track-receipt-qr" alt="QR Code Verifikasi" class="w-32 h-32 border border-gray-200 p-1 rounded-xl shadow-sm"/>
+              </div>
+              <button onclick="window.print()" class="w-full py-2 px-3 bg-primary hover:bg-emerald-950 text-white rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+                <span class="material-symbols-outlined text-[16px]">print</span>
+                <span>Cetak / Unduh PDF</span>
+              </button>
+            </div>
+
+            <!-- Survey IKM Card -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+              <h5 class="text-xs font-bold text-gray-900">Survei Kepuasan Masyarakat (IKM)</h5>
+              <p class="text-[11px] text-gray-500 mt-1">Bagaimana kemudahan penelusuran informasi di portal ini?</p>
+              <div class="flex justify-center gap-2 my-3 text-amber-400">
+                <button onclick="submitRatingIKMOnline(1)" class="hover:scale-125 transition-transform"><span class="material-symbols-outlined text-[24px]">star</span></button>
+                <button onclick="submitRatingIKMOnline(2)" class="hover:scale-125 transition-transform"><span class="material-symbols-outlined text-[24px]">star</span></button>
+                <button onclick="submitRatingIKMOnline(3)" class="hover:scale-125 transition-transform"><span class="material-symbols-outlined text-[24px]">star</span></button>
+                <button onclick="submitRatingIKMOnline(4)" class="hover:scale-125 transition-transform"><span class="material-symbols-outlined text-[24px]">star</span></button>
+                <button onclick="submitRatingIKMOnline(5)" class="hover:scale-125 transition-transform"><span class="material-symbols-outlined text-[24px]">star</span></button>
+              </div>
+              <input id="ikm-feedback-note" placeholder="Tulis masukan Anda (opsional)..." class="w-full h-8 px-2.5 text-xs border border-gray-200 rounded-lg focus:outline-none"/>
+            </div>
+
+            <!-- Hak Keberatan Alert -->
+            <div class="bg-amber-50 rounded-2xl p-4 border border-amber-200">
+              <span class="text-xs font-bold text-amber-900 block">Hak Keberatan Informasi</span>
+              <p class="text-[11px] text-amber-800 mt-1">Permohonan Anda terlambat, tidak ditanggapi, atau informasi dikecualikan sepihak tanpa alasan sah?</p>
+              <button id="btn-ajukan-keberatan-terkait" class="mt-2 text-xs font-bold text-amber-900 hover:underline flex items-center gap-1">
+                <span>Ajukan Keberatan Resmi ke Atasan PPID</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div id="lacak-empty-state" class="py-16 text-center text-gray-500 bg-white rounded-2xl shadow-sm border border-gray-100">
+        <span class="material-symbols-outlined text-[48px] text-gray-300">receipt_long</span>
+        <p class="text-sm font-semibold mt-2 text-gray-700">Masukkan Nomor Registrasi dan NIK</p>
+        <p class="text-xs text-gray-400 mt-1">Data riwayat audit akan tampil secara detail setelah Anda menekan tombol Lacak.</p>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 4: DIREKTORI INFORMASI PUBLIK (#direktori)
+         ======================================================================= -->
+    <div id="view-direktori" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 w-full">
+      <div class="mb-6">
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Katalog Terbuka Pengadilan</span>
+        <h1 class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">Direktori Informasi Publik (DIP)</h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-1">Telusuri seluruh dokumen keputusan, laporan kinerja, anggaran DIPA, dan SOP peradilan secara terbuka.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-8 space-y-4">
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-3.5 top-3 text-gray-400 text-[20px]">search</span>
+          <input id="dip-search-input" placeholder="Ketik kata kunci judul atau nomor dokumen..." class="w-full h-11 pl-11 pr-4 rounded-xl bg-gray-50 border border-gray-200 text-sm focus:ring-2 focus:ring-primary focus:bg-white focus:outline-none"/>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1">
+          <button onclick="selectDIPCategory(this, 'Semua')" data-dip-category="Semua" class="active-category px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-white shrink-0">Semua Kategori</button>
+          <button onclick="selectDIPCategory(this, 'Informasi Berkala')" data-dip-category="Informasi Berkala" class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 shrink-0">Informasi Berkala</button>
+          <button onclick="selectDIPCategory(this, 'Informasi Serta Merta')" data-dip-category="Informasi Serta Merta" class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 shrink-0">Informasi Serta Merta</button>
+          <button onclick="selectDIPCategory(this, 'Informasi Setiap Saat')" data-dip-category="Informasi Setiap Saat" class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 shrink-0">Informasi Setiap Saat</button>
+          <button onclick="selectDIPCategory(this, 'Regulasi & SK KMA')" data-dip-category="Regulasi & SK KMA" class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 shrink-0">Regulasi & SK</button>
+          <button onclick="selectDIPCategory(this, 'Laporan Tahunan')" data-dip-category="Laporan Tahunan" class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 shrink-0">Laporan Kinerja (LkjIP)</button>
+          <button onclick="selectDIPCategory(this, 'Pengadaan Barang & Jasa')" data-dip-category="Pengadaan Barang & Jasa" class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 shrink-0">Pengadaan (PBJ)</button>
+        </div>
+      </div>
+
+      <!-- Document Grid List -->
+      <div id="dip-document-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 5: STANDAR LAYANAN & MAKLUMAT (#standar-layanan)
+         ======================================================================= -->
+    <div id="view-standar-layanan" class="hidden max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full space-y-8">
+      <div>
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Komitmen Pelayanan</span>
+        <h1 class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">Standar Layanan & Maklumat PPID</h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-1">Janji pelayanan keterbukaan informasi publik Pengadilan Tata Usaha Negara Palembang.</p>
+      </div>
+
+      <!-- Maklumat Card -->
+      <div class="bg-white rounded-2xl shadow-md border-2 border-amber-300 p-8 text-center relative overflow-hidden">
+        <div class="w-16 h-16 rounded-full bg-amber-50 text-amber-700 mx-auto flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-[36px]">verified</span>
+        </div>
+        <h3 class="font-display text-xl font-bold text-primary">MAKLUMAT PELAYANAN PPID</h3>
+        <p id="maklumat-teks" class="text-sm sm:text-base text-gray-700 italic max-w-2xl mx-auto mt-4 leading-relaxed font-serif">
+          "Dengan ini kami menyatakan sanggup menyelenggarakan pelayanan informasi publik sesuai standar pelayanan yang telah ditetapkan, memberikan pelayanan yang cepat, tepat waktu, biaya ringan, dan cara sederhana, serta siap menerima sanksi sesuai ketentuan perundang-undangan bila tidak menepati janji ini."
+        </p>
+        <div class="mt-6 pt-4 border-t border-amber-100 inline-block text-xs font-semibold text-gray-800">
+          Ketua Pengadilan Tata Usaha Negara Palembang
+        </div>
+      </div>
+
+      <!-- Service Parameter Table -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <h3 class="font-display text-base font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">Parameter Standar Layanan Informasi</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+          <div class="p-4 bg-gray-50 rounded-xl">
+            <span class="font-bold text-primary block mb-1">WAKTU PENYELESAIAN</span>
+            <p class="text-gray-600">Paling lambat <strong>10 hari kerja</strong> sejak permohonan teregistrasi, dengan opsi perpanjangan 7 hari kerja.</p>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-xl">
+            <span class="font-bold text-primary block mb-1">BIAYA / TARIF DIGITAL</span>
+            <p class="text-gray-600"><strong class="text-green-700">Rp 0,- (Gratis)</strong> untuk penyampaian dokumen secara elektronik (PDF, Email, Portal).</p>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-xl">
+            <span class="font-bold text-primary block mb-1">BIAYA SALINAN CETAK</span>
+            <p class="text-gray-600">Sesuai tarif riil fotokopi pihak ketiga di luar gedung pengadilan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 6: PENGAJUAN KEBERATAN ONLINE (#keberatan)
+         ======================================================================= -->
+    <div id="view-keberatan" class="hidden max-w-3xl mx-auto px-4 sm:px-6 py-8 w-full">
+      <div class="mb-6">
+        <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Mekanisme Hak Warga</span>
+        <h1 class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">Formulir Pengajuan Keberatan Online</h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-1">Diteruskan langsung kepada Atasan PPID (Wakil Ketua PTUN Palembang) sesuai UU No. 14 Tahun 2008.</p>
+      </div>
+
+      <form id="form-keberatan-el" onsubmit="submitKeberatanForm(event)" class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-5">
+        <div>
+          <label class="text-xs font-semibold text-gray-700 block mb-1">Nomor Registrasi Permohonan Awal *</label>
+          <input id="keb-reg-id" placeholder="REG-PPID-2026-089" required class="w-full h-10 px-3.5 rounded-lg border border-gray-300 font-mono text-sm font-bold uppercase focus:ring-2 focus:ring-primary focus:outline-none"/>
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-gray-700 block mb-2">Alasan Pengajuan Keberatan * (Pilih salah satu sesuai UU KIP)</label>
+          <div class="space-y-2 text-xs text-gray-700">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg hover:bg-gray-50 border border-gray-200 cursor-pointer">
+              <input type="radio" name="alasan-keberatan" value="Penolakan atas permohonan informasi tanpa alasan yang sah" checked class="mt-0.5 text-primary"/>
+              <span>Penolakan atas permohonan informasi tanpa alasan yang sah menurut hukum</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg hover:bg-gray-50 border border-gray-200 cursor-pointer">
+              <input type="radio" name="alasan-keberatan" value="Tidak dipenuhinya permintaan informasi berkala" class="mt-0.5 text-primary"/>
+              <span>Tidak dipenuhinya permintaan informasi berkala</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg hover:bg-gray-50 border border-gray-200 cursor-pointer">
+              <input type="radio" name="alasan-keberatan" value="Tidak ditanggapinya permintaan informasi melebihi 10 hari kerja" class="mt-0.5 text-primary"/>
+              <span>Tidak ditanggapinya permintaan informasi melebihi batas waktu 10 hari kerja</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg hover:bg-gray-50 border border-gray-200 cursor-pointer">
+              <input type="radio" name="alasan-keberatan" value="Permintaan informasi ditanggapi tidak sebagaimana yang diminta" class="mt-0.5 text-primary"/>
+              <span>Permintaan informasi ditanggapi tidak sebagaimana yang diminta</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg hover:bg-gray-50 border border-gray-200 cursor-pointer">
+              <input type="radio" name="alasan-keberatan" value="Tidak dipenuhinya permintaan informasi dengan biaya yang tidak wajar" class="mt-0.5 text-primary"/>
+              <span>Tidak dipenuhinya permintaan informasi dengan pembebanan biaya yang tidak wajar</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-gray-700 block mb-1">Uraian / Penjelasan Detail Keberatan *</label>
+          <textarea id="keb-penjelasan" rows="4" placeholder="Jelaskan alasan hukum dan kronologi keberatan Anda..." required class="w-full p-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"></textarea>
+        </div>
+
+        <button id="btn-submit-keberatan" type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-primary font-bold text-sm rounded-xl transition-colors shadow-md">
+          Kirim Keberatan Resmi ke Atasan PPID
+        </button>
+      </form>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 7: PROFIL PPID (#profil)
+         ======================================================================= -->
+    <div id="view-profil" class="hidden max-w-5xl mx-auto px-4 sm:px-6 py-8 w-full space-y-6">
+      <div>
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Informasi Kelembagaan</span>
+        <h1 class="font-display text-2xl sm:text-3xl font-bold text-primary mt-1">Struktur Organisasi PPID</h1>
+        <p class="text-xs sm:text-sm text-gray-600 mt-1">Pengadilan Tata Usaha Negara Palembang (Mahkamah Agung RI).</p>
+      </div>
+
+      <div id="struktur-ppid-list" class="space-y-3">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 8: PANEL OPERASIONAL ADMIN & PETUGAS (#admin)
+         ======================================================================= -->
+    <div id="view-admin" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 w-full">
+      <!-- Login Card if not authenticated -->
+      <div id="admin-login-card" class="max-w-md mx-auto bg-white rounded-2xl shadow-md border border-gray-100 p-6 sm:p-8">
+        <div class="text-center mb-6">
+          <div class="w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto flex items-center justify-center mb-2">
+            <span class="material-symbols-outlined text-[28px]">admin_panel_settings</span>
+          </div>
+          <h2 class="font-display text-xl font-bold text-primary">Login Petugas & Admin PPID</h2>
+          <p class="text-xs text-gray-500 mt-1">Gunakan akun resmi pegawai atau email terdaftar.</p>
+        </div>
+
+        <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+          <div>
+            <label class="text-xs font-semibold text-gray-700 block mb-1">Email Pegawai / Petugas</label>
+            <input id="admin-login-email" placeholder="admin.ppid@ptun-palembang.go.id" required type="email" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"/>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-700 block mb-1">Kata Sandi</label>
+            <input id="admin-login-pass" placeholder="••••••••" required type="password" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-primary focus:outline-none"/>
+          </div>
+          <button id="btn-admin-login" type="submit" class="w-full h-10 bg-primary hover:bg-emerald-950 text-white rounded-lg font-bold text-xs transition-colors shadow-sm">
+            Masuk Panel Operasional
+          </button>
+        </form>
+
+        <div class="mt-6 pt-4 border-t border-gray-100 text-center">
+          <button onclick="handleEmergencyLogin()" class="text-xs text-amber-700 hover:underline">
+            Akses Darurat (Superadmin Backdoor)
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Admin Panel if authenticated -->
+      <div id="admin-main-panel" class="hidden space-y-6">
+        <!-- Top Operational Header -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">
+              <span class="material-symbols-outlined text-[20px]">badge</span>
+            </div>
+            <div>
+              <h3 id="admin-user-name" class="font-bold text-sm text-gray-900">Administrator PPID</h3>
+              <span id="admin-user-role" class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">Admin PPID</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="refreshAdminDashboard()" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-xs font-semibold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">refresh</span>
+              <span>Segarkan</span>
+            </button>
+            <button onclick="handleAdminLogout()" class="px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-700 rounded-lg text-xs font-semibold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">logout</span>
+              <span>Keluar</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 KPI Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-xs text-gray-500 font-medium">TOTAL MASUK</span>
+            <div id="kpi-total-masuk" class="text-2xl font-bold text-primary mt-1">0</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-xs text-gray-500 font-medium">MENUNGGU VERIFIKASI</span>
+            <div id="kpi-menunggu" class="text-2xl font-bold text-amber-700 mt-1">0</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-xs text-gray-500 font-medium">DALAM PROSES (SLA)</span>
+            <div id="kpi-dalam-proses" class="text-2xl font-bold text-blue-700 mt-1">0</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+            <span class="text-xs text-gray-500 font-medium">SELESAI TEPAT WAKTU</span>
+            <div id="kpi-selesai" class="text-2xl font-bold text-emerald-700 mt-1">0</div>
+          </div>
+        </div>
+
+        <!-- Urgent Task Queue (SLA Monitor) -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+          <div class="flex items-center justify-between mb-4 pb-2 border-b border-gray-100">
+            <div>
+              <h4 class="font-display text-base font-bold text-gray-900">Antrean Tugas Mendesak (Prioritas Batas SLA)</h4>
+              <p class="text-xs text-gray-500">Permohonan aktif yang harus diselesaikan dalam waktu dekat.</p>
+            </div>
+            <span class="px-2.5 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">SLA Watch</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="text-[11px] font-bold text-gray-400 uppercase tracking-wider bg-gray-50 border-b border-gray-200">
+                  <th class="p-3">No. Registrasi</th>
+                  <th class="p-3">Pemohon</th>
+                  <th class="p-3">Objek Informasi</th>
+                  <th class="p-3">Sisa SLA</th>
+                  <th class="p-3">Petugas PIC</th>
+                  <th class="p-3 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="admin-urgent-tasks-list" class="divide-y divide-gray-100">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       MODAL: TANDA TERIMA ELEKTRONIK RESMI (PRINTABLE PDF)
+       ========================================================================= -->
+  <div id="modal-tanda-terima" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 sm:p-8 relative print-area">
+      <div class="text-center pb-4 border-b border-gray-200">
+        <h3 class="font-display text-base sm:text-lg font-bold text-primary uppercase">TANDA TERIMA RESMI PERMOHONAN INFORMASI</h3>
+        <p class="text-xs text-gray-500">Pengadilan Tata Usaha Negara Palembang • Mahkamah Agung RI</p>
+      </div>
+
+      <div class="my-5 space-y-3 text-xs">
+        <div class="flex justify-between py-1 border-b border-gray-100">
+          <span class="text-gray-500">Nomor Registrasi</span>
+          <span id="receipt-reg-id" class="font-mono font-bold text-primary text-sm">REG-PPID-2026-001</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-gray-100">
+          <span class="text-gray-500">Nama Pemohon</span>
+          <span id="receipt-pemohon" class="font-semibold text-gray-800">-</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-gray-100">
+          <span class="text-gray-500">NIK (Tersamar)</span>
+          <span id="receipt-nik-masked" class="font-mono text-gray-700">-</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-gray-100">
+          <span class="text-gray-500">Waktu Registrasi</span>
+          <span id="receipt-tanggal" class="text-gray-700">-</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-gray-100">
+          <span class="text-gray-500">Batas Waktu Layanan (SLA)</span>
+          <span id="receipt-batas-sla" class="font-bold text-emerald-800">-</span>
+        </div>
+        <div>
+          <span class="text-gray-500 block mb-1">Rincian Informasi:</span>
+          <p id="receipt-rincian" class="p-2.5 bg-gray-50 rounded-lg text-gray-700 italic text-[11px]"></p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center my-4">
+        <img id="receipt-qr-img" alt="QR Code Keaslian Tanda Terima" class="w-32 h-32 border border-gray-200 p-1 rounded-xl shadow-sm"/>
+      </div>
+
+      <div class="flex items-center justify-between gap-3 pt-4 border-t border-gray-200 no-print">
+        <button onclick="document.getElementById('modal-tanda-terima').classList.add('hidden')" class="px-4 py-2 border border-gray-300 rounded-lg text-xs font-semibold text-gray-700 hover:bg-gray-50">
+          Tutup
+        </button>
+        <button onclick="window.print()" class="px-5 py-2 bg-primary hover:bg-emerald-950 text-white rounded-lg text-xs font-bold flex items-center gap-1 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">print</span>
+          <span>Cetak / Simpan PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       DRAWER: DETAIL & DISPOSISI OPERASIONAL PETUGAS (SLIDE-OVER 520PX)
+       ========================================================================= -->
+  <div id="slideover-drawer" class="hidden fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-sm">
+    <div class="bg-white w-full max-w-xl h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between custom-scroll">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+          <div>
+            <span class="text-[11px] font-bold text-secondary uppercase">Pemeriksaan Berkas</span>
+            <h3 id="drawer-reg-id" class="font-mono text-base font-bold text-primary">REG-PPID-2026-089</h3>
+          </div>
+          <button onclick="closeDrawer()" class="text-gray-400 hover:text-gray-600 p-1">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        <!-- Dossier Pemohon -->
+        <div class="mt-4 p-4 bg-gray-50 rounded-xl space-y-2 text-xs">
+          <div class="flex justify-between"><span class="text-gray-500">Nama:</span><span id="drawer-nama" class="font-semibold text-gray-800"></span></div>
+          <div class="flex justify-between"><span class="text-gray-500">NIK:</span><span id="drawer-nik" class="font-mono text-gray-800"></span></div>
+          <div class="flex justify-between"><span class="text-gray-500">WhatsApp:</span><span id="drawer-wa" class="font-semibold text-emerald-800"></span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Email:</span><span id="drawer-email" class="text-gray-800"></span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Alamat:</span><span id="drawer-alamat" class="text-gray-800 text-right max-w-xs"></span></div>
+          <div class="pt-2 border-t border-gray-200"><span class="text-gray-500 block mb-0.5">Informasi Diminta:</span><p id="drawer-rincian" class="font-medium text-gray-900"></p></div>
+        </div>
+
+        <!-- KTP Attachment Button -->
+        <div class="mt-4">
+          <button id="drawer-btn-ktp" class="w-full py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+            <span class="material-symbols-outlined text-[18px]">visibility</span>
+            <span>Buka Lampiran KTP Terenkripsi</span>
+          </button>
+        </div>
+
+        <!-- Status Updater Form -->
+        <div class="mt-6 space-y-4">
+          <h4 class="font-bold text-xs text-gray-900 uppercase tracking-wider">Perbarui Tahapan Layanan</h4>
+          <div>
+            <label class="text-xs font-semibold text-gray-700 block mb-1">Tahap Status</label>
+            <select id="drawer-status-select" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-xs font-semibold text-gray-800 focus:ring-2 focus:ring-primary">
+              <option value="1">Tahap 1: Permohonan Diterima</option>
+              <option value="2">Tahap 2: Verifikasi Kelengkapan Berkas</option>
+              <option value="3">Tahap 3: Pengolahan & Koordinasi Unit</option>
+              <option value="4">Tahap 4: Uji Konsekuensi & Legalitas</option>
+              <option value="5">Tahap 5: Penyerahan Informasi (Selesai)</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-700 block mb-1">Disposisi Petugas PIC</label>
+            <input id="drawer-pic-input" placeholder="Nama Petugas / Panitera Muda Hukum" class="w-full h-10 px-3 rounded-lg border border-gray-300 text-xs focus:ring-2 focus:ring-primary"/>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-gray-700 block mb-1">Catatan Publik (Tampil di Linimasa Pemohon)</label>
+            <textarea id="drawer-catatan-publik" rows="3" placeholder="Contoh: Berkas KTP telah diverifikasi. Sedang dikoordinasikan dengan Kepaniteraan Perkara." class="w-full p-2.5 rounded-lg border border-gray-300 text-xs focus:ring-2 focus:ring-primary"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-gray-200 flex items-center gap-3">
+        <button onclick="closeDrawer()" class="w-1/3 py-2.5 border border-gray-300 rounded-xl text-xs font-semibold text-gray-700 hover:bg-gray-50">
+          Batal
+        </button>
+        <button onclick="saveDrawerStatus()" class="w-2/3 py-2.5 bg-primary hover:bg-emerald-950 text-white rounded-xl text-xs font-bold shadow-md transition-colors">
+          Simpan Pembaruan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-auto"></div>
+
+  <!-- =========================================================================
+       FOOTER DIGNIFIED MAHKAMAH AGUNG
+       ========================================================================= -->
+  <footer class="bg-primary text-white pt-12 pb-6 px-4 sm:px-6 lg:px-12 border-t border-white/10 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-8 text-xs">
+      <div class="md:col-span-5 space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="font-display text-sm font-bold tracking-wider uppercase text-secondary-container">PPID PTUN PALEMBANG</span>
+        </div>
+        <p class="text-primary-fixed-dim leading-relaxed">
+          Pengadilan Tata Usaha Negara Palembang — Mahkamah Agung Republik Indonesia.<br/>
+          Jl. Mayjen HM Ryacudu No. 8 Ulu, Kecamatan Seberang Ulu I, Kota Palembang, Sumatera Selatan 30252.
+        </p>
+        <div class="text-primary-fixed-dim space-y-1">
+          <div>Telepon: (0711) 513616 / 512211</div>
+          <div>Hotline PTSP WhatsApp: +62 811-7890-414</div>
+          <div>Email: ptun.palembang@mahkamahagung.go.id</div>
+        </div>
+      </div>
+      <div class="md:col-span-3 space-y-2">
+        <span class="font-bold uppercase tracking-wider text-secondary-container block mb-1">Jaringan Resmi</span>
+        <ul class="space-y-1.5 text-primary-fixed-dim">
+          <li><a href="https://ptun-palembang.go.id" target="_blank" class="hover:text-white">Situs Utama PTUN Palembang</a></li>
+          <li><a href="https://mahkamahagung.go.id" target="_blank" class="hover:text-white">Mahkamah Agung RI</a></li>
+          <li><a href="https://putusan3.mahkamahagung.go.id" target="_blank" class="hover:text-white">Direktori Putusan MA-RI</a></li>
+          <li><a href="https://siwas.mahkamahagung.go.id" target="_blank" class="hover:text-white">SIWAS MA-RI</a></li>
+          <li><a href="https://lapor.go.id" target="_blank" class="hover:text-white">SP4N LAPOR!</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4 space-y-2">
+        <span class="font-bold uppercase tracking-wider text-secondary-container block mb-1">Jam Pelayanan PTSP</span>
+        <div class="text-primary-fixed-dim space-y-1">
+          <div>Senin - Kamis: 08.00 - 16.30 WIB</div>
+          <div>Jumat: 08.00 - 17.00 WIB</div>
+          <div class="text-[11px] text-gray-400 mt-2">Istirahat: Senin-Kamis 12.00-13.00 WIB | Jumat 11.30-13.00 WIB</div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-primary-fixed-dim gap-2">
+      <div>Hak Cipta © 2026 Pengadilan Tata Usaha Negara Palembang — Mahkamah Agung RI.</div>
+      <div>Standar Keterbukaan Informasi UU No. 14/2008 & SK KMA No. 2-144/KMA/SK/VIII/2022</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

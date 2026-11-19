@@ -1,0 +1,25 @@
+{
+  "name": "Portal PPID PTUN Palembang",
+  "short_name": "PPID PTUN",
+  "description": "Portal Resmi Pejabat Pengelola Informasi dan Dokumentasi Pengadilan Tata Usaha Negara Palembang (Mahkamah Agung RI)",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F8F9FF",
+  "theme_color": "#1B4332",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/aida/ALJJyrCjs8291qrVxG3pTAzx3d1M83dr54v_P-qdB3UIT1iF3DuzOwv38YJW856oGAquxRzcmICx7f6HNVQs2hHKYATBun2o0CexoO7RJhIu1Z1GqfbGSx3-Bsc_aUBuhLzodYxrhaprrlnmDZyo1wpPtjlz-m79qAYvFsKY9yM-xbcmxj8ztcKmfabH45EVwgS7AXoE-HuFxqGckeDPS_rj8vT5zsxqW3Lm7HoKCi1gGxJp",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://lh3.googleusercontent.com/aida/ALJJyrCjs8291qrVxG3pTAzx3d1M83dr54v_P-qdB3UIT1iF3DuzOwv38YJW856oGAquxRzcmICx7f6HNVQs2hHKYATBun2o0CexoO7RJhIu1Z1GqfbGSx3-Bsc_aUBuhLzodYxrhaprrlnmDZyo1wpPtjlz-m79qAYvFsKY9yM-xbcmxj8ztcKmfabH45EVwgS7AXoE-HuFxqGckeDPS_rj8vT5zsxqW3Lm7HoKCi1gGxJp",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
